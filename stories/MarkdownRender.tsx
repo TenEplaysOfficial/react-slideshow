@@ -1,6 +1,8 @@
 import { FC, HTMLAttributes, ReactNode, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import rehypeRaw from 'rehype-raw';import remarkGfm from 'remark-gfm';import rehypeSlug from 'rehype-slug';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
+import rehypeSlug from 'rehype-slug';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import type { Components } from 'react-markdown';
@@ -37,10 +39,7 @@ export const MarkdownRender: FC<MarkdownRenderProps> = ({ content }) => {
 
         return (
           <div className="code-block-container">
-            <button
-              onClick={handleCopy}
-              className="copy-button"
-            >
+            <button onClick={handleCopy} className="copy-button">
               {copied ? '✅' : '📋'}
             </button>
             <SyntaxHighlighter
@@ -70,8 +69,11 @@ export const MarkdownRender: FC<MarkdownRenderProps> = ({ content }) => {
 
   return (
     <>
-      <ReactMarkdown components={components} rehypePlugins={[rehypeRaw, rehypeSlug]}
-  remarkPlugins={[remarkGfm]} >
+      <ReactMarkdown
+        components={components}
+        rehypePlugins={[rehypeRaw, rehypeSlug]}
+        remarkPlugins={[remarkGfm]}
+      >
         {content}
       </ReactMarkdown>
       <style>

@@ -21,6 +21,7 @@
 A lightweight, customizable, and responsive slideshow component for React. Supports auto image switching, infinite looping, custom navigation buttons, and flexible styling positions. Perfect for modern React applications that need a smooth and clean slideshow experience.
 
 ## 🗂️ Table of Contents
+
 - [React Slideshow](#react-slideshow)
   - [🗂️ Table of Contents](#️-table-of-contents)
   - [🚀 Installation](#-installation)
@@ -69,15 +70,15 @@ export default function App() {
 
 ## ⚙️ Props
 
-| Prop             | Type                                      | Default     | Description |
-|------------------|-------------------------------------------|-------------|-------------|
-| `images`         | `string[]`                                | **Required**| Array of image URLs for the slideshow. |
-| `duration`       | `number`                                  | `3000`      | Time in milliseconds between auto transitions. |
-| `autoSwitch`     | `boolean`                                 | `true`      | Automatically switch images after `duration`. |
-| `infiniteLoop`   | `boolean`                                 | `true`      | Enables continuous looping of images. |
-| `button`         | `boolean`                                 | `true`      | Show or hide default navigation buttons. |
-| `transitionEffect` | `"fade"` \| `"slide"`                   | `"slide"`   | Type of transition animation. *(Optional Suggestion)* |
-| `onSlideChange`  | `(currentIndex: number) => void`          | `undefined` | Callback function triggered when slide changes. *(Optional Suggestion)* |
+| Prop            | Type                             | Default      | Description                                                             |
+| --------------- | -------------------------------- | ------------ | ----------------------------------------------------------------------- |
+| `images`        | `string[]`                       | **Required** | Array of image URLs for the slideshow.                                  |
+| `duration`      | `number`                         | `3000`       | Time in milliseconds between auto transitions.                          |
+| `autoSwitch`    | `boolean`                        | `true`       | Automatically switch images after `duration`.                           |
+| `infiniteLoop`  | `boolean`                        | `true`       | Enables continuous looping of images.                                   |
+| `button`        | `boolean`                        | `true`       | Show or hide default navigation buttons.                                |
+| `animation`     | `"fade"` \| `"slide"`            | `"slide"`    | Type of transition animation. _(Optional Suggestion)_                   |
+| `onSlideChange` | `(currentIndex: number) => void` | `undefined`  | Callback function triggered when slide changes. _(Optional Suggestion)_ |
 
 ## 🎨 Customization
 
@@ -87,8 +88,8 @@ export default function App() {
 <Slide
   images={images}
   customButton={{
-    left: "◀",
-    right: "▶"
+    left: '◀',
+    right: '▶',
   }}
 />
 ```
@@ -111,14 +112,8 @@ const App = () => {
   ];
 
   return (
-    <div className="w-full max-w-2xl mx-auto mt-8">
-      <Slide
-        images={slides}
-        duration={5000}
-        autoSwitch
-        infiniteLoop
-        button
-      />
+    <div className="mx-auto mt-8 w-full max-w-2xl">
+      <Slide images={slides} duration={5000} autoSwitch infiniteLoop button />
     </div>
   );
 };

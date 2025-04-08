@@ -45,8 +45,11 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.3",
+    "clsx": "^2.1.1",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.3"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
@@ -61,6 +64,7 @@
     "@storybook/react": "^8.6.12",
     "@storybook/react-vite": "^8.6.12",
     "@storybook/test": "^8.6.12",
+    "@types/node": "^22.14.0",
     "@types/react": "^19.1.0",
     "@types/react-syntax-highlighter": "^15.5.13",
     "@vitest/browser": "^3.1.1",
@@ -68,6 +72,7 @@
     "playwright": "^1.51.1",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "react-markdown": "^10.1.0",
     "react-syntax-highlighter": "^15.6.1",
     "rehype-raw": "^7.0.0",
