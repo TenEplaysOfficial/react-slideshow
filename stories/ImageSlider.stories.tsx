@@ -1,3 +1,4 @@
+/// <reference types="vite/client" />
 import type { Meta, StoryObj } from '@storybook/react';
 import { Slide } from '../lib';
 import { action } from '@storybook/addon-actions';
@@ -9,9 +10,13 @@ const images = [
   { url: 'https://picsum.photos/id/1020/600/400', alt: 'Nice landscape' },
 ];
 
+const isTest = import.meta.env?.MODE === 'test';
+
 const log = (i: number) => {
   console.log(`New image ${i}`);
-  action('Slide Changed')(i);
+  if (!isTest) {
+    action('Slide Changed')(i);
+  }
 };
 
 const meta: Meta<typeof Slide> = {
@@ -19,7 +24,7 @@ const meta: Meta<typeof Slide> = {
   component: Slide,
   tags: ['autodocs'],
   args: {
-    images: images,
+    images,
   },
 };
 
@@ -54,7 +59,7 @@ export const PauseOnHover: Story = {
   },
 };
 
-export const ButtonPosition: Story = {
+export const ButtonPositionBottom: Story = {
   args: {
     buttonPosition: 'bottom',
   },

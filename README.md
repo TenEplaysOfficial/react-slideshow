@@ -1,4 +1,4 @@
-# React Slideshow
+# [React Slideshow](https://teneplaysofficial.github.io/react-slideshow/?path=/docs/image-slideshow-demo--docs)
 
 <div class="badge-wrapper">
 
@@ -22,16 +22,14 @@ A lightweight, customizable, and responsive slideshow component for React. Suppo
 
 ## 🗂️ Table of Contents
 
-- [React Slideshow](#react-slideshow)
-  - [🗂️ Table of Contents](#️-table-of-contents)
-  - [🚀 Installation](#-installation)
-  - [📦 Usage](#-usage)
-  - [⚙️ Props](#️-props)
-  - [🎨 Customization](#-customization)
-    - [Custom Buttons](#custom-buttons)
-  - [📘 Example](#-example)
-  - [🛠️ Contributing](#️-contributing)
-  - [📜 License](#-license)
+- [🚀 Installation](#-installation)
+- [📦 Usage](#-usage)
+- [⚙️ Props](#️-props)
+- [🎨 Customization](#-customization)
+  - [Custom Buttons](#custom-buttons)
+- [📘 Example](#-example)
+- [🛠️ Contributing](#️-contributing)
+- [📜 License](#-license)
 
 ## 🚀 Installation
 
@@ -60,9 +58,13 @@ export default function App() {
     <Slide
       images={images}
       duration={3000}
-      autoSwitch={true}
-      infiniteLoop={true}
-      button={true}
+      autoSwitch
+      infiniteLoop
+      buttonPosition="overlay"
+      showIndicators
+      pauseOnHover
+      animation="slide"
+      onSlideChange={(i) => console.log('Slide:', i)}
     />
   );
 }
@@ -70,15 +72,21 @@ export default function App() {
 
 ## ⚙️ Props
 
-| Prop            | Type                             | Default      | Description                                                             |
-| --------------- | -------------------------------- | ------------ | ----------------------------------------------------------------------- |
-| `images`        | `string[]`                       | **Required** | Array of image URLs for the slideshow.                                  |
-| `duration`      | `number`                         | `3000`       | Time in milliseconds between auto transitions.                          |
-| `autoSwitch`    | `boolean`                        | `true`       | Automatically switch images after `duration`.                           |
-| `infiniteLoop`  | `boolean`                        | `true`       | Enables continuous looping of images.                                   |
-| `button`        | `boolean`                        | `true`       | Show or hide default navigation buttons.                                |
-| `animation`     | `"fade"` \| `"slide"`            | `"slide"`    | Type of transition animation. _(Optional Suggestion)_                   |
-| `onSlideChange` | `(currentIndex: number) => void` | `undefined`  | Callback function triggered when slide changes. _(Optional Suggestion)_ |
+| Prop                 | Type                                                                | Default                 | Description                                   |
+| -------------------- | ------------------------------------------------------------------- | ----------------------- | --------------------------------------------- |
+| `images`             | `Array<string \| { url: string; alt?: string }>`                    | **Required**            | Array of image URLs or objects with alt text. |
+| `duration`           | `number`                                                            | `3000`                  | Time (ms) between auto transitions.           |
+| `autoSwitch`         | `boolean`                                                           | `true`                  | Enable auto switching between slides.         |
+| `infiniteLoop`       | `boolean`                                                           | `true`                  | Loop slideshow infinitely.                    |
+| `animation`          | `"slide"` \| `"fade"`                                               | `"slide"`               | Transition type.                              |
+| `onSlideChange`      | `(index: number) => void`                                           | `undefined`             | Callback on slide change.                     |
+| `buttonPosition`     | `"overlay"` \| `"bottom"`                                           | `"overlay"`             | Position of navigation buttons.               |
+| `customButton`       | `{ left?: string \| ReactElement; right?: string \| ReactElement }` | Arrows from `getIcon()` | Custom navigation buttons.                    |
+| `hideButton`         | `boolean`                                                           | `false`                 | Hide navigation buttons.                      |
+| `showIndicators`     | `boolean`                                                           | `false`                 | Show small indicators for each slide.         |
+| `defaultImageIndex`  | `number`                                                            | `0`                     | Starting slide index.                         |
+| `pauseOnHover`       | `boolean`                                                           | `false`                 | Pause auto-switching on hover.                |
+| `transitionDuration` | `number`                                                            | `700`                   | Duration of transition animation in ms.       |
 
 ## 🎨 Customization
 
@@ -96,7 +104,7 @@ export default function App() {
 
 ## 📘 Example
 
-Here’s a complete working example in React for more visit [Live](https://teneplaysofficial.github.io/react-slideshow):
+Here’s a complete working example in React for more visit [Live](https://teneplaysofficial.github.io/react-slideshow/?path=/docs/image-slideshow-demo--docs):
 
 ```tsx
 import React from 'react';
@@ -123,8 +131,13 @@ export default App;
 
 ## 🛠️ Contributing
 
-Contributions are welcome! Please open issues or submit pull requests on [GitHub](https://github.com/TenEplaysOfficial/react-slideshow).
+We welcome contributions from the community!
+
+If you have ideas, suggestions, or bug reports, feel free to [open an issue](https://github.com/TenEplaysOfficial/react-slideshow/issues) or [submit a pull request](https://github.com/TenEplaysOfficial/react-slideshow/pulls) on GitHub.
+
+Let's make `@tenedev/react-slideshow` better together!
 
 ## 📜 License
 
-MIT © [TenEplaysOfficial](https://github.com/TenEplaysOfficial)
+This project is licensed under the [MIT License](LICENSE).  
+Copyright © [TenEplaysOfficial](https://github.com/TenEplaysOfficial)
