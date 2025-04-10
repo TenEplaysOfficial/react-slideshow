@@ -41,6 +41,7 @@
   "scripts": {
     "prepare": "husky install",
     "test": "vitest run",
+    "build": "rollup -c --bundleConfigAsCjs",
     "prettier": "prettier --write .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
