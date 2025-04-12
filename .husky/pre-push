@@ -1,4 +1,12 @@
+# .husky/pre-push
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-npx vitest run
+# Run Vitest tests before pushing
+./node_modules/.bin/vitest run
+
+# If tests fail, abort the push
+if [ $? -ne 0 ]; then
+  echo "Tests failed, push aborted."
+  exit 1
+fi

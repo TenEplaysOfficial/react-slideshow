@@ -93,13 +93,24 @@ export default function ImageSlider({
     };
   }, []);
 
-  useEffect(() => {
-    if (showIndicators && indicatorRefs.current[imageIndex]) {
-      indicatorRefs.current[imageIndex]?.scrollIntoView({
+  const scrollIndicatorIntoView = (index: number) => {
+    const el = indicatorRefs.current[index];
+    const container = el?.parentElement;
+
+    if (el && container) {
+      const elCenter = el.offsetLeft + el.offsetWidth / 2;
+      const containerCenter = container.offsetWidth / 2;
+
+      container.scrollTo({
+        left: elCenter - containerCenter,
         behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center',
       });
+    }
+  };
+
+  useEffect(() => {
+    if (showIndicators) {
+      scrollIndicatorIntoView(imageIndex);
     }
   }, [imageIndex, showIndicators]);
 
