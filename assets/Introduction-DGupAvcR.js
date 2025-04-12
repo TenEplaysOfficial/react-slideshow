@@ -1,4 +1,4 @@
-import{j as ye}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as B0}from"./index-CiLGvShk.js";import{e as U0}from"./index-LkSrvUFN.js";import{g as Dl,R as gt,c as Mn,r as H0}from"./index-DQLiH3RP.js";import"./iframe-Bqi2ZUiJ.js";import"./index-CJPVTaBz.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";const q0=`# [React Slideshow](https://teneplaysofficial.github.io/react-slideshow/?path=/docs/image-slideshow-demo--docs)
+import{j as ye}from"./jsx-runtime-D_zvdyIk.js";import{useMDXComponents as B0}from"./index-CiLGvShk.js";import{e as U0}from"./index-N4E-XgyZ.js";import{g as Dl,R as gt,c as Mn,r as H0}from"./index-DQLiH3RP.js";import"./iframe-C2Zjk2ZJ.js";import"./index-CJPVTaBz.js";import"./index-CXQShRbs.js";import"./index-DrFu-skq.js";const q0=`# [React Slideshow](https://teneplaysofficial.github.io/react-slideshow/?path=/docs/image-slideshow-demo--docs)
 
 <div class="badge-wrapper">
 
