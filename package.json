@@ -1,6 +1,6 @@
 {
   "name": "@tenedev/react-slideshow",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A lightweight, customizable, and responsive slideshow component for React.",
   "keywords": [
     "react",
@@ -31,9 +31,15 @@
     "url": "https://www.patreon.com/teneplays"
   },
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
   "files": [
     "dist",
     "README.md"
